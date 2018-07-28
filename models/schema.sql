@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+--Drops the Db if it exists
+DROP DATABASE IF EXISTS hotelexpress_db;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+--Creates the hotelexpress_db DB
+CREATE DATABASE hotelexpress_db;

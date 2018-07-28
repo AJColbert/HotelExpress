@@ -1,2 +1,2 @@
 # HotelExpress
-The Best Hotel in the buisness
+The Best Hotel in the business.

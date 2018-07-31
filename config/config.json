@@ -1,8 +1,13 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "12345678",
     "database": "hotelexpress_db",
+=======
+    "password": "root",
+    "database": "exampledb",
+>>>>>>> 8cc1861f1cd06ff1c0bf01cf9ceebb7cb0c9d584
     "host": "localhost",
     "dialect": "mysql"
   },

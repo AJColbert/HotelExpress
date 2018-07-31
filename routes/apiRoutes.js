@@ -15,6 +15,20 @@ module.exports = function(app) {
     });
   });
 
+  //--START DARYLL---
+  app.post("/api/book", function(req, res) {
+    console.log(req.body);
+    db.booking.create({
+      checkInDate: req.body.checkInDate,
+      checkOutDate: req.body.checkOutDate,
+      specialRequests: req.body.specialRequests
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+  //--END DARYLL---
+  
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {

@@ -3,18 +3,11 @@ module.exports = function (sequelize, DataTypes)
     var booking = sequelize.define("booking", {
         checkInDate: {
             type: DataTypes.DATEONLY,
-            allowNull: false,
-            validate: {
-                isNumeric: true,
-                len: [10]
-            }
+            allowNull: false
         },
         checkOutDate: {
             type: DataTypes.DATEONLY,
-            allowNull: false,
-            validate: {
-                isEmail: true
-            }
+            allowNull: false
         },
         specialRequests: {
             type: DataTypes.TEXT,

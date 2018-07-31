@@ -31,6 +31,12 @@ module.exports = function(app) {
   //   });
   // });
 
+  //-----------------DARYLL-------------------------
+  app.get("/book", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/forms"));
+  });
+  //-----END of DARYLL---------------------------
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

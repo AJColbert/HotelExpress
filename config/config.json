@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "root",
-=======
-    "password": "12345678",
->>>>>>> origin/hamad
     "database": "hotelexpress_db",
     "host": "localhost",
     "dialect": "mysql"

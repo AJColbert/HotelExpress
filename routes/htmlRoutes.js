@@ -38,7 +38,7 @@ module.exports = function(app) {
   //-----END of DARYLL---------------------------
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
+  // app.get("*", function(req, res) {
+  //   res.render("404");
+  // });
 };

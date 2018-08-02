@@ -30,7 +30,7 @@ module.exports = function (app)
     {
         console.log(req.body);
         db.booking.create(req.body)
-            .then(function (dbBooking)
+            .then(function(dbBooking)
             {
                 res.json(dbBooking);
             });

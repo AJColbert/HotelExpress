@@ -18,7 +18,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/guest-api-routes")(app);
+require("./routes/guset-api-routes")(app);
+require("./routes/booking-api-routes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };

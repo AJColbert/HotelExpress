@@ -10,10 +10,9 @@ module.exports = function (sequelize, DataTypes)
             allowNull: false,
         },
         phoneNumber: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isNumeric: true,
                 len: [10]
             }
         },

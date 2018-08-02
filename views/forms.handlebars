@@ -1,9 +1,14 @@
-<br>
+ <br>
     <br>
     <form>
         <div class="form-group">
-            <label for="guestName">Name:</label>
-            <input type="text" class="form-control" id="guestName" autocomplete="name">
+            <label for="lastName">Last name:</label>
+            <input type="text" class="form-control" id="lastName" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+            <label for="firstName">First name:</label>
+            <input type="text" class="form-control" id="firstName" autocomplete="name">
         </div>
 
         <div class="form-group">
@@ -28,6 +33,15 @@
         </div>
 
         <div class="form-group">
+            <label for="roomType">Room Type:</label>
+            <select class="form-control" id="roomType">
+                <option>King</option>
+                <option>Queen</option>
+                <option>Executive Suite</option>
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="startDate">Check-in Date:</label>
             <input type="date" name="check-in-date" id="startDate" class="form-control" autocomplete="date">
         </div>
@@ -42,8 +56,7 @@
             <textarea class="form-control" rows="5" id="guestNotes"></textarea>
         </div>
 
-
         <input class="btn btn-primary" type="submit" value="Submit" id="submitBookingButton">
     </form>
 
-    <script src="./assets/javascript/forms.js"></script>
+    <script src="./js/forms.js"></script>

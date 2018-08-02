@@ -46,14 +46,20 @@ module.exports = function(app) {
   // });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f6b7d9ffe1ad5a109810788330833ccfc8d83e65
   //-----------------DARYLL-------------------------
   app.get("/book", function(req, res) {
     res.render(path.join(__dirname, "../views/404.handlebars"));
   });
   //-----END of DARYLL---------------------------
 
+<<<<<<< HEAD
 =======
 >>>>>>> origin/dev
+=======
+>>>>>>> f6b7d9ffe1ad5a109810788330833ccfc8d83e65
   // Render 404 page for any unmatched routes
   // app.get("*", function(req, res) {
   //   res.render("404");

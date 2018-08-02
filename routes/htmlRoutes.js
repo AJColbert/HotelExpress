@@ -11,7 +11,18 @@ module.exports = function(app) {
   app.get("/home", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
-  // end hamad
+  //end hamad
+
+  //start Daryll - Route for booking page/form
+  app.get("/book", function(req, res) {
+    res.render(path.join(__dirname, "../views/forms"));
+  });
+
+  app.get("/guests", function(req, res) {
+    res.render(path.join(__dirname, "../views/guests"));
+  });
+
+  //end Daryll
 
   // app.get("/", function(req, res) {
   //   db.Example.findAll({}).then(function(dbExamples) {
@@ -30,12 +41,6 @@ module.exports = function(app) {
   //     });
   //   });
   // });
-
-  //-----------------DARYLL-------------------------
-  app.get("/book", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/forms"));
-  });
-  //-----END of DARYLL---------------------------
 
   // Render 404 page for any unmatched routes
   // app.get("*", function(req, res) {

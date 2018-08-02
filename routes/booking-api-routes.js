@@ -4,20 +4,10 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function (app)
+
 {
     // GET route for getting all of the bookings
-    app.get("/api/bookings/", function (req, res)
-    {
-        db.booking.findAll({ include: [db.room] })
-            .then(function (dbBooking)
-            {
-                res.json(dbBooking);
-            }).catch(function (err)
-            {
-                //DO Seomthing
-                res.json('{"Error":"Coud not find stuff"}' + err);
-            });
-    });
+      
 
     // Get route for retrieving a single booking
     app.get("/api/bookings/:id", function (req, res)

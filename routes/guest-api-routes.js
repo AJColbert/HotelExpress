@@ -3,11 +3,11 @@ module.exports = function(app) {
   // start get
   app.get("/api/guests/", function(req, res) {
     if (req.params.id) {
-      db.guests.findById(req.params.id).then(function(guest) {
+      db.guest.findById(req.params.id).then(function(guest) {
         res.json(guest);
       });
     } else {
-      db.guests.findAll({}).then(function(guest) {
+      db.guest.findAll({}).then(function(guest) {
         res.json(guest);
       });
     }
@@ -16,7 +16,7 @@ module.exports = function(app) {
 
   // start post
   app.post("/api/guests", function(req, res) {
-    db.guests.create(req.body).then(function(guest) {
+    db.guest.create(req.body).then(function(guest) {
       res.json(guest);
     });
   });
@@ -54,3 +54,4 @@ module.exports = function(app) {
   });
   // end delete
 };
+

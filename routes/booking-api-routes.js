@@ -35,10 +35,12 @@ module.exports = function (app)
     });
 
     // booking route for saving a new booking 
-    //TODO: Write BOOKING POST SEQUELIZE
     app.post("/api/bookings", function (req, res)
     {
         console.log(req.body);
+
+
+        
         db.booking.create(req.body)
             .then(function (dbBooking)
             {

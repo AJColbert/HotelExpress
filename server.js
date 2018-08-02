@@ -18,7 +18,12 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Routes
+<<<<<<< HEAD
 require("./routes/guest-api-routes")(app);
+=======
+require("./routes/guset-api-routes")(app);
+require("./routes/booking-api-routes")(app);
+>>>>>>> origin/aaron
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };

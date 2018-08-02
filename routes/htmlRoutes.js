@@ -5,13 +5,16 @@ module.exports = function(app) {
   // Load index page
   // Start hamad
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render(path.join(__dirname, "../views/index.handlebars"));
   });
 
   app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render(path.join(__dirname, "../views/index.handlebars"));
   });
   // end hamad
+
+
+
 
   // app.get("/", function(req, res) {
   //   db.Example.findAll({}).then(function(dbExamples) {
@@ -33,7 +36,7 @@ module.exports = function(app) {
 
   //-----------------DARYLL-------------------------
   app.get("/book", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/forms"));
+    res.render(path.join(__dirname, "../views/404.handlebars"));
   });
   //-----END of DARYLL---------------------------
 

@@ -45,7 +45,7 @@ module.exports = function(app) {
   // });
 
   //-----------------DARYLL-------------------------
-  app.get("/book", function(req, res) {
+  app.get("/*", function(req, res) {
     res.render(path.join(__dirname, "../views/404.handlebars"));
   });
   //-----END of DARYLL---------------------------

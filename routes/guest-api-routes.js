@@ -25,32 +25,29 @@ module.exports = function(app) {
   // start put
   app.put("/api/guests", function(req, res) {
     db.guests.update({
-        text: req.body.text,
-          complete: req.body.complete
-        },
-        {
-          where: {
-            id: req.body.id
-          }
-        }
-      )
-      .then(function(guest) {
-        res.json(guest);
-      });
+      text: req.body.text,
+      complete: req.body.complete
+    },
+    {
+      where: {
+        id: req.body.id
+      }
+    }
+    ).then(function(guest) {
+      res.json(guest);
+    });
   });
   // end put
-
+  
   // start delete
   app.delete("/api/guests/:id", function(req, res) {
-    db.guests
-      .destroy({
-        where: {
-          id: req.params.id
-        }
-      })
-      .then(function(guest) {
-        res.json(guest);
-      });
+    db.guests.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(guest) {
+      res.json(guest);
+    });
   });
   // end delete
 };

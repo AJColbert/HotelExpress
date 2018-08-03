@@ -38,11 +38,8 @@ module.exports = function (app)
     app.post("/api/bookings", function (req, res)
     {
         console.log(req.body);
-
-
-        
         db.booking.create(req.body)
-            .then(function(dbBooking)
+            .then(function (dbBooking)
             {
                 res.json(dbBooking);
             });
@@ -76,4 +73,23 @@ module.exports = function (app)
                 res.json(dbBooking);
             });
     });
+
+// Get route for retrieving a single booking
+app.get("/api/availablerooms/:checkInDate/:checkOutDate/:room_type", function (req, res)
+{
+    console.log(req.body)
+
+    db.sequelize.query("SELECT rooms.id FROM hotelexpress_db.rooms Left Outer Join bookings ON rooms.id = bookings.id WHERE room_type = :room_type AND rooms.id Not IN(SELECT roomid FROM bookings WHERE (CheckInDate BETWEEN DATE(:checkInDate) AND (DATE(:checkOutDate)-1) ) AND (checkOutDate BETWEEN DATE(:checkInDate) AND (DATE(:checkOutDate)))) LIMIT 1;",
+        { replacements: {checkInDate: req.params.checkInDate, checkOutDate: req.params.checkOutDate, room_type: req.params.room_type}, type: db.sequelize.QueryTypes.SELECT }
+    ).then(function(room)
+    {
+        console.log(room);
+        res.json(room);
+    });
+});
+
 };
+
+
+
+

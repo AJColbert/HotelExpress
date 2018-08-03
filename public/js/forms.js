@@ -46,13 +46,20 @@ $(document).ready(function () {
         $.post("/api/guests", guest)
             .then(function (data) {
                 console.log(data.id);
-                postBooking({
-                    guestid: data.id,
-                    checkInDate: checkInDate,
-                    checkOutDate: checkOutDate,
-                    room_type: room_type
+                $.get("/api/availablerooms", {checkInDate: checkInDate, checkOutDate: checkOutDate})
+                .then(function(room){
+
+                    postBooking({
+                        guestid: data.id,
+                        roomid: room.id,
+                        checkInDate: checkInDate,
+                        checkOutDate: checkOutDate,
+                        room_type: room_type
+                    
+                    });
                 });
-            })
+               
+            });
     }
 
     function postBooking(bookingDetails){

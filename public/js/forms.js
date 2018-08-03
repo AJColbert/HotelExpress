@@ -54,7 +54,6 @@ $(document).ready(function () {
                         checkInDate: checkInDate,
                         checkOutDate: checkOutDate,
                         room_type: room_type
-                    
                     });
                 });
                

@@ -21,6 +21,10 @@ module.exports = function(app) {
     res.render(path.join(__dirname, "../views/guests"));
   });
 
+  app.get("/bookings", function(req, res) {
+    res.render(path.join(__dirname, "../views/bookings"));
+  });
+
   //end Daryll
 
 

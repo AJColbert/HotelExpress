@@ -17,7 +17,7 @@ module.exports = function (app)
     // GET route for getting all of the bookings
     app.get("/api/bookings", function (req, res) {
         db.booking.findAll({
-                include: [db.room]
+                include: [db.room,db.guest]
             })
             .then(function (dbBooking) {
                 res.json(dbBooking);
@@ -33,7 +33,7 @@ module.exports = function (app)
                 where: {
                     id: req.params.id
                 },
-                include: [db.room]
+                include: [db.rooms]
             })
             .then(function (dbBooking) {
                 res.json(dbBooking);

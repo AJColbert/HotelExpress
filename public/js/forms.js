@@ -26,9 +26,8 @@ $(document).ready(function () {
         checkInDate = $("#startDate").val().trim();
         checkOutDate = $("#endDate").val().trim();
         room_type = $("#roomType").val().trim();
-        capacity = $("#guestCount").val().trim();
 
-        if (!firstName || !lastName || !guestEmail || !guestCount || !startDate || !endDate || !guestPhone) {
+        if (!firstName || !lastName || !guestEmail || !startDate || !endDate || !guestPhone) {
             alert("Please fill in all fields.");
         } else {
             postGuest({

@@ -1,26 +1,40 @@
 $(document).ready(function () {
-  var bookingsList = $("tbody");
 
-  $(".delete-item-button").on("click", function() {
+  $(document).on("click",".delete-item-button",function() {
+ 
+    var id = $(this).attr("id");
     console.log("hey");
-    //var id = $(this).attr("id");
-
-    // $.ajax("/api/list/" + id, {
-    //     type: "DELETE"
-    // }).then(
-    //     function () {
-    //         window.location.reload();
-    //     }
-    // );
-
+    $.ajax("/api/bookings/" + id, {
+        type: "DELETE"
+    }).then(
+        function () {
+            window.location.reload();
+        }
+    );
   });
 
+  // $(document).on("click",".update-item-button",function() {
+ 
+  //   var id = $(this).attr("id");
+  //   console.log("hey");
+  //   $.ajax("/api/list/" + id, {
+  //       type: "DELETE"
+  //   }).then(
+  //       function () {
+  //           window.location.reload();
+  //       }
+  //   );
+
+  // });
+
+  var bookingsList = $("tbody");
   getBookings();
 
   //to be fixed by Daryll
   function createBookingRow(bookingData) {
     var newTr = $("<tr>");
-    var deleteButton =$("<input>").addClass("btn btn-primary delete-item-button").attr("id", bookingData.id).attr("value","delete");
+    var deleteButton = $("<input>").addClass('btn btn-primary delete-item-button').attr("type",'delete').attr("value",'Delete').attr("id",bookingData.id);
+    var updateButton = $("<input>").addClass('btn btn-primary update-item-button').attr("type",'update').attr("value",'Update').attr("id",bookingData.id);
 
     newTr.data("booking", bookingData);
     newTr.append("<td>" + bookingData.id + "</td>");
@@ -31,8 +45,8 @@ $(document).ready(function () {
     newTr.append("<td>" + bookingData.guest.lastName + "</td>");
     newTr.append("<td>" + bookingData.guest.firstName + "</td>");
     newTr.append("<td>" + bookingData.specialRequests + "</td>");
-    newTr.append("<td>").append(deleteButton);
-    newTr.append("<td>" + "<input class='btn btn-primary delete-item-button' type='update' value='Update'" + "</td>").attr("id", bookingData.id);
+    newTr.append(updateButton);
+    newTr.append(deleteButton);
     return newTr;
   }
 
@@ -48,7 +62,6 @@ $(document).ready(function () {
 
   function renderBookingsList(rows) {
     if (rows.length) {
-      console.log(rows);
       bookingsList.prepend(rows);
     } else {
       renderEmpty();

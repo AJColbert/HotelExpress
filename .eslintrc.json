@@ -4,10 +4,7 @@
         "commonjs": true,
         "node": true
     },
-    "extends": "prettier",
-    "plugins": [
-        "prettier"
-      ],
+   
     "rules": {
         "no-duplicate-case":"error",
         "no-empty":"error",
@@ -30,14 +27,10 @@
             "error",
             "windows"
         ],
-        "quotes": [
-            "error",
-            "double"
-        ],
         "semi": [
             "error",
             "always"
-        ],
-        "prettier/prettier": "error"
+        ]
+        
     }
 }

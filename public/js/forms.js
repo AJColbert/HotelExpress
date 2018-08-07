@@ -59,10 +59,25 @@ $(document).ready(function () {
             });
     }
 
+    function resetForm(){
+        console.log("reset done!");
+        $("#firstName").val("");
+        $("#lastName").val("");
+        $("#guestPhone").val("")
+        $("#guestEmail").val("")
+        $("#guestNotes").val("")
+        $("#startDate").val("")
+        $("#endDate").val("")
+        $("#roomType").val("")
+    }
+
     function postBooking(bookingDetails){
         $.post("/api/bookings", bookingDetails)
         .then(function(data){
             console.log(data);
+            resetForm();
         })
     }
+
+
 });

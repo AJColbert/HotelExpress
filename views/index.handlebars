@@ -1,11 +1,41 @@
-<!-- ============================================================== -->
-<!-- Preloader - style you can find in spinners.css -->
-<!-- ============================================================== -->
-<div class="preloader">
-    <div class="loader">
-        <div class="loader__figure"></div>
-        <p class="loader__label"></p>
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+        <h2>Welcome to Hotel Express</h2>
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="booking-text">Book a Room</label>
+            <input type="text" id="booking-text" class="form-control" aria-describedby="booking-text" placeholder="Enter Booking Text">
+          </div>
+          <div class="form-group">
+            <label for="example-description">Employee Login</label>
+            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+        <h3>Bookings:</h3>
+        <ul id="booking-list" class="list-group">
+          {{#each bookings}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="booking/{{this.id}}">{{this.text}}</a>
+            <button id="submit" class="btn btn-primary float-right">Submit</button>
+          </li>
+          {{/each}}
+        </ul>
+        <h3>Employees:</h3>
+        <ul id="employee-list" class="list-group">
+          {{#each employees}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="employees/{{this.id}}">{{this.text}}</a>
+            <button id="submit" class="btn btn-primary float-right">Submit</button>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
+  </div>
 </div>
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
@@ -292,4 +322,5 @@
         delay: 10
     });
 
-</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>

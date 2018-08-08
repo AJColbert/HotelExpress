@@ -14,15 +14,15 @@ module.exports = function(app) {
 
   //start Daryll - Route for booking page/form
   app.get("/book", function(req, res) {
-    res.render(path.join(__dirname, "../views/forms"));
+    res.render(path.join(__dirname, "../views/forms.handlebars"));
   });
 
   app.get("/guests", function(req, res) {
-    res.render(path.join(__dirname, "../views/guests"));
+    res.render(path.join(__dirname, "../views/guests.handlebars"));
   });
 
   app.get("/bookings", function(req, res) {
-    res.render(path.join(__dirname, "../views/bookings"));
+    res.render(path.join(__dirname, "../views/bookings.handlebars"));
   });
 
   //end Daryll

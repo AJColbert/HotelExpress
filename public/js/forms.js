@@ -7,6 +7,10 @@ $(document).ready(function () {
     var checkInDate;
     var checkOutDate;
     var room_type;
+<<<<<<< HEAD
+=======
+    var capacity;
+>>>>>>> origin/dawn_dev
     var now = new Date();;
     var minDate = now.toISOString().substring(0, 10);
 
@@ -26,8 +30,14 @@ $(document).ready(function () {
         checkInDate = $("#startDate").val().trim();
         checkOutDate = $("#endDate").val().trim();
         room_type = $("#roomType").val().trim();
+<<<<<<< HEAD
 
         if (!firstName || !lastName || !guestEmail || !startDate || !endDate || !guestPhone) {
+=======
+        capacity = $("#guestCount").val().trim();
+
+        if (!firstName || !lastName || !guestEmail || !guestCount || !startDate || !endDate || !guestPhone) {
+>>>>>>> origin/dawn_dev
             alert("Please fill in all fields.");
         } else {
             postGuest({
@@ -43,7 +53,11 @@ $(document).ready(function () {
     function postGuest(guest) {
         $.post("/api/guests", guest)
             .then(function (data) {
+<<<<<<< HEAD
                 console.log(data);
+=======
+                console.log(check);
+>>>>>>> origin/dawn_dev
                 $.get("/api/availablerooms/" + checkInDate + "/" + checkOutDate + "/" + room_type, function(room){
                     console.log(room);
                     postBooking({
@@ -51,14 +65,19 @@ $(document).ready(function () {
                         roomId: room[0].id,
                         checkInDate: checkInDate,
                         checkOutDate: checkOutDate,
+<<<<<<< HEAD
                         room_type: room_type,
                         specialRequests: specialRequests
+=======
+                        room_type: room_type
+>>>>>>> origin/dawn_dev
                     });
                 });
                
             });
     }
 
+<<<<<<< HEAD
     function resetForm(){
         console.log("reset done!");
         $("#firstName").val("");
@@ -71,13 +90,21 @@ $(document).ready(function () {
         $("#roomType").val("")
     }
 
+=======
+>>>>>>> origin/dawn_dev
     function postBooking(bookingDetails){
         $.post("/api/bookings", bookingDetails)
         .then(function(data){
             console.log(data);
+<<<<<<< HEAD
             resetForm();
         })
     }
 
 
 });
+=======
+        })
+    }
+});
+>>>>>>> origin/dawn_dev

@@ -3,7 +3,9 @@ $(document).ready(function () {
   $(document).on("click",".delete-item-button",function() {
  
     var id = $(this).attr("id");
-    console.log("hey");
+
+    $('#delete-modal').on('click','.yes-delete-button', function(event) {
+      
     $.ajax("/api/bookings/" + id, {
         type: "DELETE"
     }).then(
@@ -11,7 +13,7 @@ $(document).ready(function () {
             window.location.reload();
         }
     );
-  });
+  })});
 
   // $(document).on("click",".update-item-button",function() {
  
@@ -33,7 +35,7 @@ $(document).ready(function () {
   //to be fixed by Daryll
   function createBookingRow(bookingData) {
     var newTr = $("<tr>");
-    var deleteButton = $("<input>").addClass('btn btn-primary delete-item-button').attr("type",'delete').attr("value",'Delete').attr("id",bookingData.id);
+    var deleteButton = $("<input>").addClass('btn btn-primary delete-item-button').attr("type",'delete').attr("value",'Delete').attr("id",bookingData.id).attr("data-toggle","modal").attr("data-target","#delete-modal");
     var updateButton = $("<input>").addClass('btn btn-primary update-item-button').attr("type",'update').attr("value",'Update').attr("id",bookingData.id);
 
     newTr.data("booking", bookingData);
@@ -73,8 +75,4 @@ $(document).ready(function () {
     var alertDiv = $("<div>");
     alertDiv.text("No bookings in the database.");
     bookingsList.append(alertDiv);
-  }
-
-
-
-});
+  }});

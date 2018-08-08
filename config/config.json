@@ -4,8 +4,7 @@
     "password": "root",
     "database": "hotelexpress_db",
     "host": "localhost",
-    "dialect": "mysql",
-    "port": 5000
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

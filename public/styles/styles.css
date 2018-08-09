@@ -1,5 +1,17 @@
 
 body {
-  width: 90%;
   margin: auto;
+  text-align: center;
+}
+
+.delete-item-button {
+  width: 80px;
+  background-color: orange;
+  display: inline;
+}
+
+.update-item-button {
+  width: 80px;
+  background-color: green;
+  display: inline;
 }

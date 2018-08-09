@@ -54,3 +54,23 @@ a {
 }
 
 
+.form-group {
+  width: 60%;
+  margin: auto;
+}
+
+#startDate{
+  display: inline-block;
+}
+
+.form-container {
+  width: 60%;
+  margin: auto;
+  background-color: skyblue;
+  padding: 15px;
+  border-radius: 10px;
+}
+#endDate{
+  display: inline-block;
+}
+

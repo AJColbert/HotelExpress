@@ -91,7 +91,7 @@ module.exports = function (app)
     // Get route for retrieving a single booking
     app.get("/api/availablerooms/:checkInDate/:checkOutDate/:room_type", function (req, res)
     {
-        console.log(req.body)
+        console.log(req.body);
 
         db.sequelize.query("SELECT rooms.id FROM hotelexpress_db.rooms Left Outer Join bookings ON rooms.id = bookings.id WHERE room_type = :room_type AND rooms.id Not IN(SELECT roomid FROM bookings WHERE (CheckInDate BETWEEN DATE(:checkInDate) AND (DATE(:checkOutDate)-1) ) AND (checkOutDate BETWEEN DATE(:checkInDate) AND (DATE(:checkOutDate)))) LIMIT 1;",
             {

@@ -2,6 +2,8 @@ var db = require("../models");
 module.exports = function(app) {
   // start get
   app.get("/api/guests/", function(req, res) {
+    console.log(res);
+   
     if (req.params.id) {
       db.guest.findById(req.params.id).then(function(guest) {
         res.json(guest);

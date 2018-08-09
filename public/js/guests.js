@@ -22,7 +22,7 @@ $(document).ready(function () {
       }
       renderGuestList(rowsToAdd);
     });
-  };
+  }
 
   function renderGuestList(rows) {
     //room.children().not(":last").remove();

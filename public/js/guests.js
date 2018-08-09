@@ -14,12 +14,10 @@ $(document).ready(function () {
           window.location.reload();
         }
       );
-    })
+    });
   });
 
   var guestList = $("tbody");
-
-  getGuests();
 
   function createGuestRow(guestData) {
     var newTr = $("<tr>");
@@ -42,7 +40,8 @@ $(document).ready(function () {
       }
       renderGuestList(rowsToAdd);
     });
-  };
+  }
+  getGuests();
 
   function renderGuestList(rows) {
     //room.children().not(":last").remove();

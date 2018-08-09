@@ -1,27 +1,57 @@
+<<<<<<< HEAD
 $(document).ready(function() {
+=======
+$(document).ready(function ()
+{
+>>>>>>> origin/dev
 
-  $(document).on("click",".delete-item-button",function() {
- 
+  $(document).on("click", ".delete-item-button", function()
+  {
     var id = $(this).attr("id");
 
-    $('#delete-modal').on('click','.yes-delete-button', function(event) {
-      
-    $.ajax("/api/bookings/" + id, {
+    $('#delete-modal').on('click', '.yes-delete-button', function (event)
+    {
+      $.ajax("/api/bookings/" + id, {
         type: "DELETE"
-    }).then(
-        function () {
-            window.location.reload();
+      }).then(
+        function ()
+        {
+          window.location.reload();
         }
-    );
-  })});
+      );
+    });
+  });
 
+<<<<<<< HEAD
   var bookingsList = $("tbody");
   getBookings();
 
   function createBookingRow(bookingData) {
+=======
+  // $(document).on("click",".update-item-button",function() {
+
+  //   var id = $(this).attr("id");
+  //   console.log("hey");
+  //   $.ajax("/api/list/" + id, {
+  //       type: "DELETE"
+  //   }).then(
+  //       function () {
+  //           window.location.reload();
+  //       }
+  //   );
+
+  // });
+
+  var bookingsList = $("tbody");
+  getBookings();
+
+  //to be fixed by Daryll
+  function createBookingRow(bookingData)
+  {
+>>>>>>> origin/dev
     var newTr = $("<tr>");
-    var deleteButton = $("<input>").addClass('btn btn-primary delete-item-button').attr("type",'delete').attr("value",'Delete').attr("id",bookingData.id).attr("data-toggle","modal").attr("data-target","#delete-modal");
-    var updateButton = $("<input>").addClass('btn btn-primary update-item-button').attr("type",'update').attr("value",'Update').attr("id",bookingData.id);
+    var deleteButton = $("<input>").addClass('btn btn-primary delete-item-button').attr("type", 'delete').attr("value", 'Delete').attr("id", bookingData.id).attr("data-toggle", "modal").attr("data-target", "#delete-modal");
+    var updateButton = $("<input>").addClass('btn btn-primary update-item-button').attr("type", 'update').attr("value", 'Update').attr("id", bookingData.id);
 
     newTr.data("booking", bookingData);
     newTr.append("<td>" + bookingData.id + "</td>");
@@ -37,27 +67,40 @@ $(document).ready(function() {
     return newTr;
   }
 
-  function getBookings() {
-    $.get("/api/bookings/", function (data) {
+  function getBookings()
+  {
+    $.get("/api/bookings/", function (data)
+    {
       var rowsToAdd = [];
-      for (var i = 0; i < data.length; i++) {
+      for (var i = 0; i < data.length; i++)
+      {
         rowsToAdd.push(createBookingRow(data[i]));
       }
       renderBookingsList(rowsToAdd);
     });
-  };
+  }
 
-  function renderBookingsList(rows) {
-    if (rows.length) {
+  function renderBookingsList(rows)
+  {
+    if (rows.length)
+    {
       bookingsList.prepend(rows);
-    } else {
+    } else
+    {
       renderEmpty();
     }
   }
 
+<<<<<<< HEAD
   // Function for handling what to render when there are no bookings
   function renderEmpty() {
+=======
+  // Function for handling what to render when there are no authors
+  function renderEmpty()
+  {
+>>>>>>> origin/dev
     var alertDiv = $("<div>");
     alertDiv.text("No bookings in the database.");
     bookingsList.append(alertDiv);
-  }});
+  }
+});

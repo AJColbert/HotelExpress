@@ -24,7 +24,7 @@ module.exports = function(app) {
 
   // start put
   app.put("/api/guests", function(req, res) {
-    db.guests.update({
+    db.guest.update({
       text: req.body.text,
       complete: req.body.complete
     },
@@ -41,7 +41,7 @@ module.exports = function(app) {
   
   // start delete
   app.delete("/api/guests/:id", function(req, res) {
-    db.guests.destroy({
+    db.guest.destroy({
       where: {
         id: req.params.id
       }

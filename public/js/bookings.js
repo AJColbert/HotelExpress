@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
   $(document).on("click",".delete-item-button",function() {
  
@@ -15,24 +15,9 @@ $(document).ready(function () {
     );
   })});
 
-  // $(document).on("click",".update-item-button",function() {
- 
-  //   var id = $(this).attr("id");
-  //   console.log("hey");
-  //   $.ajax("/api/list/" + id, {
-  //       type: "DELETE"
-  //   }).then(
-  //       function () {
-  //           window.location.reload();
-  //       }
-  //   );
-
-  // });
-
   var bookingsList = $("tbody");
   getBookings();
 
-  //to be fixed by Daryll
   function createBookingRow(bookingData) {
     var newTr = $("<tr>");
     var deleteButton = $("<input>").addClass('btn btn-primary delete-item-button').attr("type",'delete').attr("value",'Delete').attr("id",bookingData.id).attr("data-toggle","modal").attr("data-target","#delete-modal");
@@ -70,7 +55,7 @@ $(document).ready(function () {
     }
   }
 
-  // Function for handling what to render when there are no authors
+  // Function for handling what to render when there are no bookings
   function renderEmpty() {
     var alertDiv = $("<div>");
     alertDiv.text("No bookings in the database.");

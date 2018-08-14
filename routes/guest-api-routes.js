@@ -2,8 +2,6 @@ var db = require("../models");
 module.exports = function(app) {
   // start get
   app.get("/api/guests/", function(req, res) {
-    console.log(res);
-   
     if (req.params.id) {
       db.guest.findById(req.params.id).then(function(guest) {
         res.json(guest);
@@ -26,11 +24,9 @@ module.exports = function(app) {
 
   // start put
   app.put("/api/guests", function(req, res) {
-    db.guests.update({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      phoneNumber: req.body.phoneNumber,
-      email: req.body.email
+    db.guest.update({
+      text: req.body.text,
+      complete: req.body.complete
     },
     {
       where: {
@@ -42,7 +38,7 @@ module.exports = function(app) {
     });
   });
   // end put
-
+  
   // start delete
   app.delete("/api/guests/:id", function(req, res) {
     db.guest.destroy({
